@@ -46,3 +46,8 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     }
   end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'c3',
+  callback = function() vim.treesitter.start(0, 'c3') end,
+})

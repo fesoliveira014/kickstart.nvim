@@ -223,6 +223,14 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+vim.filetype.add {
+  extension = {
+    c3 = 'c3',
+    c3i = 'c3',
+    c3t = 'c3',
+  },
+}
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -888,11 +896,11 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
-    -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-    --    This is the easiest way to modularize your config.
-    --
-    --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-    { import = 'custom.plugins' },
+  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
+  --    This is the easiest way to modularize your config.
+  --
+  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
@@ -921,7 +929,6 @@ require('lazy').setup({
 })
 
 require 'custom.autocommands'
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
